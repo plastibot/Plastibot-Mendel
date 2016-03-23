@@ -1,0 +1,98 @@
+accessControl:
+  salt: rXtLZT8e6v2Hs5g3Xc4SoA9n23PLgaQP
+api:
+  key: 707CF5B1BCAA47F894456030AE30BE66
+appearance: {}
+feature:
+  keyboardControl: false
+gcodeViewer:
+  enabled: false
+plugins:
+  cura:
+    cura_engine: /home/pi/CuraEngine/build/CuraEngine
+  discovery:
+    upnpUuid: 42f62915-1f56-4768-b623-009158230c64
+  snapstream:
+    fps: '1'
+    url: http://172.16.80.236:8080/?action=snapshot
+  softwareupdate:
+    _config_version: 4
+    checks:
+      octoprint:
+        type: github_release
+printerParameters: {}
+printerProfiles:
+  defaultProfile:
+    axes:
+      e:
+        inverted: false
+        speed: 300
+      x:
+        inverted: false
+        speed: 6000
+      y:
+        inverted: false
+        speed: 6000
+      z:
+        inverted: false
+        speed: 200
+    color: red
+    extruder:
+      count: 1
+      nozzleDiameter: 0.4
+      offsets:
+      - - 0.0
+        - 0.0
+    heatedBed: false
+    id: _default
+    model: Generic RepRap Printer
+    name: Default
+    volume:
+      depth: 200.0
+      formFactor: rectangular
+      height: 200.0
+      origin: lowerleft
+      width: 200.0
+serial:
+  autoconnect: true
+  baudrate: 0
+  port: AUTO
+  timeout: {}
+server:
+  commands:
+    serverRestartCommand: ''
+    systemRestartCommand: ''
+    systemShutdownCommand: ''
+  firstRun: true
+  secretKey: grHM0QUheDH360LlzOl3Jcm3mEhhiFlV
+slicing:
+  defaultProfiles:
+    cura: nylon_raft
+system:
+  actions:
+  - name: Shutdown
+    command: sudo shutdown -h now
+    action: shutdown
+    confirm: You are about to shutdown the system.
+  - name: Reboot
+    command: sudo shutdown -r now
+    action: reboot
+    confirm: You are about to reboot the system
+temperature:
+  profiles:
+  - bed: 100
+    extruder: '270'
+    name: Nylon
+  - bed: 60
+    extruder: '215'
+    name: PLA
+webcam:
+  ffmpeg: /usr/bin/ffmpeg
+  snapshot: http://172.16.80.236:8080/?action=snapshot
+  stream: http://127.0.0.1:8080/?action=stream
+  timelapse:
+    fps: 25
+    options: {}
+    postRoll: 0
+    type: zchange
+  watermark: false
