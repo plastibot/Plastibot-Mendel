@@ -1,5 +1,7 @@
 #!/bin/bash
 #This uses a local IP Address of 172.16.80.236
+#Octoprint user: pi
+#Octoprint password: plastibot
 
 #########################################################
 #INSTRUCTIONS:
