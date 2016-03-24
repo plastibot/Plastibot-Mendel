@@ -9,7 +9,7 @@ gcodeViewer:
   enabled: false
 plugins:
   cura:
-    cura_engine: /home/pi/CuraEngine/build/CuraEngine
+    cura_engine: /usr/share/CuraEngine/build/CuraEngine
   discovery:
     upnpUuid: 42f62915-1f56-4768-b623-009158230c64
   snapstream:
@@ -63,21 +63,20 @@ server:
     serverRestartCommand: ''
     systemRestartCommand: ''
     systemShutdownCommand: ''
-  firstRun: true
+  firstRun: false
   secretKey: grHM0QUheDH360LlzOl3Jcm3mEhhiFlV
 slicing:
-  defaultProfiles:
-    cura: nylon_raft
+  defaultProfiles: {}
 system:
   actions:
-  - name: Shutdown
+  - action: shutdown
     command: sudo shutdown -h now
-    action: shutdown
     confirm: You are about to shutdown the system.
-  - name: Reboot
+    name: Shutdown
+  - action: reboot
     command: sudo shutdown -r now
-    action: reboot
     confirm: You are about to reboot the system
+    name: Reboot
 temperature:
   profiles:
   - bed: 100
